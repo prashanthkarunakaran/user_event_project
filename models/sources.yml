@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: raw
+    database: AGS_GAME_AUDIENCE
+    schema: RAW
+
+    tables:
+      - name: USER_EVENTS_RAW
+        description: "Raw JSON event data loaded from S3"
+
+models:
+  - name: stg_user_events
+    description: "Staging model for cleaned user events"
+
+    columns:
+      - name: EVENT_ID
+        description: "Generated unique event identifier"
+
+      - name: USER_LOGIN
+        description: "Application user login id"
+
+      - name: USER_EVENT
+        description: "User activity event"
+
+      - name: EVENT_TIME
+        description: "Timestamp of user event"
+
+  - name: dim_users
+    description: "Latest state of each user"
+
+  - name: fct_user_events
+    description: "Incremental fact table storing user events"

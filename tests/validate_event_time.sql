@@ -1,0 +1,3 @@
+SELECT *
+FROM {{ ref('stg_user_events') }}
+WHERE EVENT_TIME > CURRENT_TIMESTAMP

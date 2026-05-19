@@ -1,0 +1,4 @@
+EVENT_TYPE,EVENT_DESCRIPTION
+login,User Login
+logout,User Logout
+purchase,Product Purchase
